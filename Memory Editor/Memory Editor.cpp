@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <memoryapi.h>
 #include <codecvt>
+#include <string>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ int main()
     // Getting target window input
     string window;
     cout << "Enter window name: ";
-    cin >> window;
+    getline(cin, window);
 
     wstring_convert<codecvt_utf8_utf16<wchar_t>> converter;
     wstring wide = converter.from_bytes(window);
